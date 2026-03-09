@@ -1,0 +1,1 @@
+# Gate 3 system prompt — emotional and narrative register scoring via Claude vision

@@ -1,0 +1,1 @@
+# Relationship agent system prompt — next action determination per person

@@ -1,0 +1,27 @@
+# config/cameras.yaml
+# Camera configuration for Bardo Farm
+#
+# Each camera entry requires:
+#   id:         unique key used throughout the system (e.g. "north_pen_cam")
+#   ip:         IP address reachable over Tailscale VPN
+#   port:       RTSP port (default 554)
+#   label:      Human-readable location name shown in dashboard and content
+#   notes:      Optional description of placement and field of view
+#
+# Credentials are loaded from environment variables CAMERA_USERNAME and CAMERA_PASSWORD.
+# RTSP URL format: rtsp://{CAMERA_USERNAME}:{CAMERA_PASSWORD}@{ip}:{port}/h264Preview_01_main
+#
+# Add cameras here as they are deployed. The system scales automatically.
+
+cameras:
+  - id: north_pen_cam
+    ip: 100.64.0.11          # Tailscale IP of camera on field network
+    port: 554
+    label: "North Pen"
+    notes: "Mounted on oak tree at northwest corner, covers main rooting area"
+
+  - id: oak_grove_cam
+    ip: 100.64.0.12
+    port: 554
+    label: "Oak Grove Trail"
+    notes: "Covers the wooded corridor between north pen and feeding station"

@@ -1,0 +1,9 @@
+opencv-python
+anthropic
+fastapi
+uvicorn
+jinja2
+pyyaml
+python-dotenv
+apscheduler
+pytest

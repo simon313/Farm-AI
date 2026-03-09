@@ -1,0 +1,79 @@
+# config/farm.yaml
+# Farm identity, voice, operational values, and system thresholds
+# All agents read from this file. Changes here affect editorial behavior immediately.
+
+# ─── FARM IDENTITY ───────────────────────────────────────────────────────────
+
+farm:
+  name: "Bardo Farm"
+  location: "Appalachian foothills, Virginia"
+  what_we_raise: "woods-raised heritage pork, cured and smoked meats"
+  voice: "honest, earthy, direct — no sentimentality, no marketing speak"
+  what_we_believe: >
+    Pigs belong in the woods. They root, they forage, they live like pigs.
+    That's not a selling point — it's just how it's supposed to be.
+    We raise them slow, cure them right, and sell to people who care where their
+    food comes from. We don't perform farming. We just farm.
+
+# ─── CURRENT STATE ───────────────────────────────────────────────────────────
+
+season: "spring"
+current_narrative_arc: "spring growth — last year's finishers going to harvest, new piglets arriving"
+
+products_available:
+  - "smoked shoulder"
+  - "cured lardo"
+  - "whole ham"
+  - "pork belly"
+
+products_coming:
+  - product: "summer sausage"
+    estimated_date: "2025-07-01"
+  - product: "fresh cuts"
+    estimated_date: "2025-06-15"
+
+# ─── GATE 1 THRESHOLDS — TECHNICAL QUALITY ───────────────────────────────────
+# Clips failing any of these are discarded before any AI call is made.
+
+gate1:
+  min_brightness: 30          # Mean pixel brightness (0-255). Below this = too dark.
+  min_sharpness: 80.0         # Laplacian variance. Below this = too blurry.
+  min_duration_seconds: 4     # Clips shorter than this are discarded.
+  max_shake_threshold: 15.0   # Frame-to-frame pixel shift indicating camera shake.
+  audio_quality_check: true   # Whether to run audio quality analysis.
+
+# ─── GATE 2 THRESHOLDS — ACTIVITY DETECTION ──────────────────────────────────
+
+gate2:
+  min_motion_area_ratio: 0.02    # Fraction of frame that must show active motion (0.0-1.0).
+  min_motion_frames: 5           # Minimum number of frames with qualifying motion.
+  background_history: 500        # MOG2 background subtractor history frames.
+  background_var_threshold: 16   # MOG2 variance threshold for foreground detection.
+
+# ─── GATE 3 THRESHOLDS — EMOTIONAL REGISTER ──────────────────────────────────
+
+gate3:
+  min_register_score: 0.6        # At least one emotional register must score above this.
+  thumbnail_frames: 3            # Number of frames extracted and sent to Claude vision.
+
+# ─── GATE 4 THRESHOLDS — FARM VIBE ───────────────────────────────────────────
+
+gate4:
+  min_vibe_score: 0.7            # Farm vibe score below this = discard.
+
+# ─── MOTION DETECTION ─────────────────────────────────────────────────────────
+
+motion:
+  sensitivity: "medium"          # low | medium | high — maps to MOG2 parameters
+  clip_pre_buffer_seconds: 3     # Seconds of footage captured before motion trigger
+  clip_post_buffer_seconds: 10   # Seconds of footage captured after motion stops
+  max_clip_duration_seconds: 60  # Hard cap on clip length
+
+# ─── STORAGE ──────────────────────────────────────────────────────────────────
+
+storage:
+  clips_dir: "storage/clips"
+  thumbnails_dir: "storage/thumbnails"
+  content_dir: "storage/content"
+  database_path: "storage/bardo_farm.db"
+  retain_failed_clips: false     # If true, keep clips that failed gates (for debugging)

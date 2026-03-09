@@ -1,0 +1,37 @@
+# config/animals.yaml
+# Known animals on Bardo Farm
+#
+# Each animal entry:
+#   id:            unique key (matches Animal.id in database)
+#   name:          public-facing name used in content
+#   group:         pen name or "woods-roaming"
+#   type:          boar | sow | piglet | finisher
+#   markings:      physical description for visual identification by observer agent
+#   temperament:   curious | shy | dominant | social
+#   arrival_date:  YYYY-MM-DD
+#   origin:        where the animal came from
+#   current_phase: growing | finishing | harvested
+#
+# Animals are characters the audience follows. Keep descriptions specific enough
+# that the observer agent can identify individuals in camera footage.
+
+animals:
+  - id: earl
+    name: "Earl"
+    group: "north_pen"
+    type: "boar"
+    markings: "Large, dark grey, distinctive notch in left ear, moves slowly and deliberately"
+    temperament: "dominant"
+    arrival_date: "2024-03-15"
+    origin: "Bardo Farm born"
+    current_phase: "finishing"
+
+  - id: the_sisters
+    name: "The Sisters"
+    group: "oak_grove"
+    type: "sow"
+    markings: "Two nearly identical spotted sows, always together, one slightly larger"
+    temperament: "social"
+    arrival_date: "2024-05-01"
+    origin: "purchased from neighboring farm"
+    current_phase: "growing"

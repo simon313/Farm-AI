@@ -1,0 +1,1 @@
+# Storyteller system prompt — caption and hook generation

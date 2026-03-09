@@ -1,0 +1,1 @@
+# Gate 4 system prompt — farm vibe score via Claude vision
