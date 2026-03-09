@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment secrets
+.env
+
+# Database
+storage/bardo_farm.db
+storage/bardo_farm.db-shm
+storage/bardo_farm.db-wal
+
+# Storage (runtime-generated, not source)
+storage/clips/*
+storage/thumbnails/*
+storage/content/*
+!storage/clips/.gitkeep
+!storage/thumbnails/.gitkeep
+!storage/content/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# pytest
+.pytest_cache/
