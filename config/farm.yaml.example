@@ -1,0 +1,55 @@
+# Example farm configuration
+# Copy this to farm.yaml and customize for your farm
+# NEVER commit farm.yaml to version control
+
+farm:
+  name: Your Farm Name
+  location: "Your Location, State"
+  what_we_raise: "woods-raised heritage pork"
+  voice: "honest, earthy, authentic"
+  what_we_believe: "Pigs belong in the woods."
+
+season: spring
+current_narrative_arc: "finishing season"
+products_available:
+  - smoked shoulder
+  - fresh pork chops
+products_coming:
+  - product: summer sausage
+    estimated_date: "2025-07-01"
+
+# Quality gates configuration
+gate1:
+  min_brightness: 20
+  min_sharpness: 10.0
+  min_duration_seconds: 2
+  max_shake_threshold: 100.0
+  audio_quality_check: false
+
+gate2:
+  min_motion_area_ratio: 0.01
+  min_motion_frames: 2
+  background_history: 100
+  background_var_threshold: 16
+
+gate3:
+  min_register_score: 0.5
+  thumbnail_frames: 2
+
+gate4:
+  min_vibe_score: 0.5
+
+# Motion detection config
+motion:
+  sensitivity: medium
+  clip_pre_buffer_seconds: 1
+  clip_post_buffer_seconds: 5
+  max_clip_duration_seconds: 30
+
+# Storage paths
+storage:
+  clips_dir: storage/clips
+  thumbnails_dir: storage/thumbnails
+  content_dir: storage/content
+  database_path: storage/bardo_farm.db
+  retain_failed_clips: false
