@@ -1,4 +1,4 @@
-# Bardo Farm AI System
+# Farm AI System
 
 An AI-powered farm intelligence platform that watches a woods-raised pig farm through cameras and sensors, scores captured moments through an editorial filter, and assembles them into content.
 
