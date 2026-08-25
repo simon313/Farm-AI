@@ -1,0 +1,16 @@
+# Example camera configuration
+# Copy this to cameras.yaml and fill in your actual camera IPs, ports, and labels
+# NEVER commit cameras.yaml to version control — it contains sensitive network information
+
+cameras:
+  - id: north_pen_cam
+    ip: 192.168.1.100
+    port: 554
+    label: North Pen Camera
+    notes: "Main barn camera, Reolink, via Tailscale"
+  
+  - id: oak_grove_cam
+    ip: 192.168.1.101
+    port: 554
+    label: Oak Grove Camera
+    notes: "Outdoor camera"
