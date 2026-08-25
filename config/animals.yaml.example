@@ -1,0 +1,24 @@
+# Example animals configuration
+# Copy this to animals.yaml and customize for your farm
+# NEVER commit animals.yaml to version control
+
+animals:
+  - id: earl
+    name: Earl
+    group: north_pen
+    type: boar
+    markings: "Large dark grey, scar on left ear"
+    temperament: dominant
+    arrival_date: "2024-03-15"
+    origin: farm born
+    current_phase: finishing
+  
+  - id: the_sisters
+    name: The Sisters
+    group: oak_grove
+    type: gilt
+    markings: "Spotted black and white"
+    temperament: social
+    arrival_date: "2024-01-20"
+    origin: neighboring farm
+    current_phase: growing
