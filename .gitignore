@@ -12,6 +12,13 @@ env/
 
 # Environment secrets
 .env
+.env.local
+.env.*.local
+
+# Configuration files (PRIVATE — never commit)
+config/cameras.yaml
+config/animals.yaml
+config/farm.yaml
 
 # Database
 storage/bardo_farm.db
